@@ -1,56 +1,19 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>blockworld - Launcher</title>
+    <title>blockworld - Engine</title>
     <script src="https://raw.githack.com/fengari-lua/fengari-web/master/dist/fengari-web.js"></script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(180deg, #0a2463 0%, #3e92cc 100%);
-            color: white;
-            font-family: 'Serif', serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        #game-container {
-            width: 800px;
-            height: 450px;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-        #console {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            font-family: monospace;
-            font-size: 10px;
-            color: rgba(255,255,255,0.5);
-        }
+        body, html { margin: 0; padding: 0; overflow: hidden; background: #000; }
+        canvas { width: 100vw; height: 100vh; display: block; image-rendering: pixelated; }
     </style>
 </head>
 <body>
-    <h1 style="font-style: italic; font-size: 48px; margin-bottom: 0;">blockworld</h1>
-    <p style="font-family: monospace; letter-spacing: 2px; font-size: 12px; margin-top: 5px;">A TINY VOXEL SANDBOX</p>
-    
-    <div id="game-container">
-        <div id="ui-layer" style="padding: 20px;"></div>
-        <div id="console">System: Initializing Lua 5.3 via Fengari...</div>
-    </div>
-
+    <canvas id="gameCanvas"></canvas>
     <script type="application/lua" src="main.lua"></script>
+    <script type="application/lua" src="world.lua"></script>
     <script type="application/lua" src="inventory.lua"></script>
     <script type="application/lua" src="settings.lua"></script>
 </body>
 </html>
-
